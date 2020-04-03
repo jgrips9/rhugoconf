@@ -1,0 +1,20 @@
+---
+title: "RMarkdown Formatting"
+author: "Jake"
+output: html_document
+---
+### Results
+I am interested in the 'mpg' variable along with the 'vs' variable. I want to display mpg on a scatterplot and t-test results comparing mpg for vs values of 0 and 1. My null hypothesis would be the mpg for both vs groups are equal.  
+
+
+As weight increased trend appears to result in decreased mpg. Below is correlation of mpg and weight relationship.  
+`r cor(mtcars$mpg, mtcars$wt)`.  
+![Image of graph created in another rmarkdown file. Exported/saved graph](../../static/img/graph.png)
+
+Below are results of T-test mentioned earlier. My null hypothesis would be the mpg for both vs groups are equal.  
+```{r table_created}
+cat(readLines("../../static/Results/ttest.txt"), sep="\n")
+```
+
+## Conclusion  
+Based on such a low p-value I reject the null hypothesis. The data does not suggest that vs equal to 0 has the same mpg as vs equal to 1. vs equal to 1 has a much larger average mpg than vs equal to 0.  

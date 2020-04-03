@@ -1,0 +1,59 @@
+---
+title: "Basic SUmmary Stats"
+author: "Jacob Grippin"
+date: "1/14/2020"
+output:
+  html_document:
+    df_print: paged
+---
+## Introdouction
+```{r preparations, include=FALSE}
+#Easier reference variable names in mtcars dataset
+attach(mtcars)
+#Store column names of dataset as a new object
+names = colnames(mtcars)
+
+changend <- table(vs)
+#Help documentation for subset command
+#?subset
+vs0 <- subset(mtcars, vs == 0)
+vs1 <- subset(mtcars, vs == 1)
+#Help documentation for t.test command
+#?t.test
+testres <- t.test(vs0$mpg, vs1$mpg)
+```
+
+This is a short *memo*. Describing a dataset, showing some visuals. Put 2 spaces at end of line for output to go to next line.  
+
+Load system dataset "mtcars". Column names of dataset included below.    
+**`r colnames(mtcars)` **
+
+
+### Variable Descriptions 
+I am interested in variables for Miles Per Gallong(MPG) and VS. Their variable information is included below.  
+Variable `r names[8]` has the following frequency counts.   
+0         1  
+`r changend`  
+
+Variable `r names[1]` has the following measure of mean and standard deviation.  
+**mean = **`r mean(mtcars$mpg)`  
+**standard deviation **= `r sd(mtcars$mpg)`  
+
+```{r ttest, include=FALSE, echo=FALSE}
+#Commands below to compare avg mpg for vs equal to 0 and equal to 1. 
+vs0 <- subset(mtcars, vs == 0)
+vs1 <- subset(mtcars, vs == 1)
+sink("../../static/Results/ttest.txt")
+testres <- t.test(vs0$mpg, vs1$mpg)
+#Print t.test results
+testres
+sink()
+```
+  
+
+Following links have good reference information:  
+[Rmarkdown Webiste](https://rmarkdown.rstudio.com/) - tutorial rmarkdown  
+[Rmarkdown cheatsheet](https://rstudio.com/wp-content/uploads/2016/03/rmarkdown-cheatsheet-2.0.pdf) - cheatsheet 
+
+
+

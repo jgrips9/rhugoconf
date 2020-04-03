@@ -1,0 +1,35 @@
+baseurl: "https://example.org/"
+title: "Conference name"
+canonifyurls: true
+theme: "hugo-conference"
+
+GoogleAnalytics: ""
+
+params:
+  # Conference info
+  Name: "Jacob Grippin's Results"
+  Date: "March 17th 2020"
+  Price: "Free" # If your event is free, just comment this line
+  Venue: "CISER"
+  #Address: "Ithaca"
+  City:  "Ithaca"
+  State: "NY"
+  Images: ["/img/badge.jpg"]
+  #GoogleMapsKey: "my-secret-maps-key"
+
+  # Active sections on the website to deactivate comment out with '#'
+  # you can also change order here and it will reflect on page
+  # File demo-check-it will export a graph and table.
+  # Following file will contain rmarkdown that calls an image too.
+  Sections:
+    - About
+    - demo-check-it
+    - RMarkdown_Formatting
+    - Sample_Results
+
+  # Titles which you can translate to other languages
+  Titles:
+    About: "About"
+    demo-check-it: "Sample RMark"
+    RMarkdown_Formatting: "Formatting RMarkdown"
+    Sample_Results: "Real Data RMark"

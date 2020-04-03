@@ -1,0 +1,6 @@
+---
+title: "About"
+output: html_document
+---
+
+This is my beginning of a website. I am not sure if it is possible to create multiple pages for this setting. It seems all content gets pasted in a list. I believe there may be some benefit in learning how to code using **.yml**. I have never done it before. 
